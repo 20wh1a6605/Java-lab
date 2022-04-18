@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.Scanner;
+class calculator{
+    double a,b;
+    char op;
+    void calc(double a,double b,char op){
+        switch(op){
+            case '+':
+                System.out.println("Sum of a and b is "+(a+b));
+                break;
+            case '*':
+                System.out.println("product of a and b is "+(a*b));
+                break;
+            case '/':
+                System.out.println("division of a and b is "+(a/b));
+                break;
+            case '-':
+                System.out.println("difference of a and b is "+(a+b));
+                break;
+            default:
+                System.out.println("wrong operand");
+                break;
+        }
+    }
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        calculator obj = new calculator();
+        System.out.println("Enter the operators");
+        obj.a = s.nextDouble();
+        obj.b = s.nextDouble();
+        System.out.println("Enter the operand");
+        obj.op = s.next().charAt(0);
+        obj.calc(obj.a,obj.b,obj.op);
+    }
+}
