@@ -1,0 +1,21 @@
+package roll_6605;
+import java.io.*;
+import java.util.Scanner;
+public class pattern {
+	int a;
+	void printing(int a) {
+		for(int i = 1;i<=a;i++) {
+			for(int j = 1;j<=i;j++) {
+				System.out.print(j +" ");
+			}
+			System.out.println("\n");
+		}
+	}
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		pattern obj = new pattern();
+		System.out.println("Give the number of lines in the pattern");
+		obj.a = s.nextInt();
+		obj.printing(obj.a);
+	}
+}
