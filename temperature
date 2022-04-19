@@ -1,0 +1,16 @@
+package roll_6605;
+import java.io.*;
+import java.util.Scanner;
+public class temperature {
+	float c;
+	void convert() {
+		System.out.println("temperature in farenheit is "+((c*9)/5)+32);
+	}
+	public static void main(String[] args) {
+		temperature a1 = new temperature();
+		Scanner s = new Scanner(System.in);
+		a1.c = s.nextFloat();
+		a1.convert();
+	}
+	
+}
