@@ -1,0 +1,25 @@
+package roll_6605;
+import java.io.*;
+import java.util.Scanner;
+public class electricity_bill {
+	double a;
+	void bill(double a) {
+		if(a<=100) {
+			System.out.println("The total bill is "+a*1);
+		}
+		else if(a<=200) {
+			System.out.println("The total bill is "+a*2.5);
+		}
+		else if(a<=300){
+			System.out.println("The total bill is "+a*10);
+		}
+	}
+	public static void main(String[] args){
+		Scanner s = new Scanner(System.in);
+        electricity_bill obj = new electricity_bill();
+        System.out.println("Give the total units");
+        obj.a = s.nextDouble();
+        obj.bill(obj.a);
+	}
+
+}
