@@ -1,0 +1,40 @@
+package roll_6605;
+import java.io.*;
+import java.util.Scanner;
+public class matrix_add {
+	void add(int[][] a,int[][] b) {
+		int[][] sum = new int[a.length][a[0].length];
+		for(int i = 0;i<2;i++) {
+			for(int j = 0;j<2;j++) {
+				sum[i][j] = a[i][j] +b[i][j];
+			}
+		}
+		for(int i = 0;i<a.length;i++) {
+			for(int j = 0;j<a[0].length;j++) {
+				System.out.println(sum[i][j] );
+			}
+			System.out.println("\n");
+		}
+	}
+	public static void main(String[] args) {
+		matrix_add a1 = new matrix_add();
+		Scanner s = new Scanner(System.in);
+		int[][] a = new int[2][2];
+		int[][] b = new int[2][2];
+		System.out.println("Give  4 elements");
+		for(int i = 0;i<a.length;i++) {
+			for(int j = 0;j<a[0].length;j++) {
+				a[i][j] = s.nextInt();
+			}
+		}
+		
+		System.out.println("Give  4 elements");
+		for(int i = 0;i<b.length;i++) {
+			for(int j = 0;j<b[0].length;j++) {
+				b[i][j] = s.nextInt();
+			}
+		}
+		s.close();
+		a1.add(a,b);
+	}
+}
