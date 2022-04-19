@@ -1,0 +1,27 @@
+package roll_6605;
+import java.io.*;
+import java.util.Scanner;
+public class reverse {
+	void rev(int[] a) {
+		int[] b = new int[a.length];
+		for(int i = 0;i<a.length;i++) {
+			b[a.length-i-1] = a[i];
+		}
+		System.arraycopy(b,0,a,0,a.length);
+		System.out.println("reversed array is");
+		for(int i = 0;i<a.length;i++) {
+			System.out.println(a[i] );
+		}
+	}
+	public static void main(String[] args) {
+		reverse a1 = new reverse();
+		Scanner s = new Scanner(System.in);
+		int[] a = new int[4];
+		System.out.println("Give  4 elements");
+		for(int i = 0;i<a.length;i++) {
+			a[i] = s.nextInt();
+		}
+		a1.rev(a);
+	}
+
+}
