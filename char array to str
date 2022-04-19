@@ -1,0 +1,21 @@
+package roll_6605;
+import java.io.*;
+import java.util.Scanner;
+public class chartostringarray {
+	void string(char[] a) {
+	        String string = new String(a);
+	        System.out.println("Character array to string is "+ string);
+	}
+	public static void main(String[] args) {
+		chartostringarray a1 = new chartostringarray();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Give number of elements");
+		int n = s.nextInt();
+		char[] a = new char[n];
+		System.out.println("Give  n elements");
+		for(int i = 0;i<a.length;i++) {
+			a[i] = s.next().charAt(0);
+		}
+		a1.string(a);
+	}
+}
