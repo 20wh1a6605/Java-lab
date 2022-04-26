@@ -1,0 +1,29 @@
+package roll_6605;
+import java.util.Scanner;
+import java.io.*;
+public class Str_reverse {
+	/*void rev(char[] a) {
+		char[] b = new char[a.length];
+		for(int i = 0;i<a.length;i++) {
+			b[a.length-i-1] = a[i];
+		}
+		System.arraycopy(b,0,a,0,a.length);
+	}
+	public static void main(String[] args) {
+		String s = "abc";
+		char[] arr = new char[s.length()];
+		arr = s.toCharArray();
+		Str_reverse s1 = new Str_reverse();
+		s1.rev(arr);
+		String a = new String(arr);
+		System.out.println(a);
+	}**/
+	public static void main(String[] args) {
+		String s = "abc";
+		StringBuilder a = new StringBuilder();
+		a.append(s);
+		a.reverse();
+		System.out.println(a);
+	}
+	
+}
