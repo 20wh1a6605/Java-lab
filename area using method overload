@@ -1,0 +1,33 @@
+package roll_6605;
+import java.util.Scanner;
+import java.io.*;
+public class Area_overload {
+	public void sq_rect(double a) {
+		double ar = a*a;
+		System.out.println("Area of square of edge a is "+ar);
+	}
+	public void sq_rect(double a,double b) {
+		double ar = a*b;
+		System.out.println("Area of rectangle of length a and breadth b is "+ar);
+	}
+	public void cir_tri(double a) {
+		double ar = 3.14*a*a;
+		System.out.println("Area of circle of radius a is "+ar);
+	}
+	public void cir_tri(double a,double b) {
+		double ar = a*b*0.5;
+		System.out.println("Area of triangle of edge a and b is "+ar);
+	}
+	public static void main(String[] args) {
+		Area_overload a = new Area_overload();
+		a.sq_rect(2);
+		a.sq_rect(2,1);
+		a.cir_tri(4.5);
+		a.cir_tri(4.5, 5);
+	}
+
+	
+	
+	
+	
+}
