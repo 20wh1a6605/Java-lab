@@ -1,0 +1,36 @@
+package roll_6605;
+import java.util.Scanner;
+import java.io.*;
+public class Student_info {
+	int sid;
+	String address;
+	String c_name;
+	String b_name;
+	int age;
+	String sname;
+	public Student_info(int r,String e,String b,String c,String d,int a) {
+		sid = r;
+		sname = e;
+		address = b;
+		c_name = c;
+		b_name = d;
+		age = a;
+	}
+	public void display() {
+		System.out.println("Student id "+sid +"Student name is "+sname+ " Age of the student" +age+" Student address "+address+"Course name taken by the student "+c_name+" Branch name "+b_name);
+		System.out.println("\n");
+	}
+	public static void main(String[] args) {
+		Student_info s1 = new Student_info(6605,"Shubha","Ameerpet","Ml","AIML",18);
+		Student_info s2 = new Student_info(6606,"Rohan","Ameerpet","Ml","AIML",18);
+		Student_info s3 = new Student_info(6607,"Kiran","Ameerpet","Ml","AIML",18);
+		Student_info s4 = new Student_info(6608,"Roshan","Ameerpet","Ml","AIML",18);
+		Student_info s5 = new Student_info(6609,"Koushi","Ameerpet","Ml","AIML",18);
+		s1.display();
+		s2.display();
+		s3.display();
+		s4.display();
+		s5.display();
+	}
+
+}
