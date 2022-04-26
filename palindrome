@@ -1,0 +1,21 @@
+package roll_6605;
+import java.util.Scanner;
+import java.io.*;
+public class Palindrome {
+	public static void main(String[] args) {
+		Scanner n = new Scanner(System.in);
+		System.out.println("give the string to be checked");
+		String s = n.nextLine();
+		StringBuilder a = new StringBuilder();
+		a.append(s);
+		a.reverse();
+		String rev = a.toString();
+		if(s.equals(rev))
+		{   
+			System.out.println("Palindrome");
+		}
+		else {
+			System.out.println("Not palindrome");
+		}
+		}
+}
