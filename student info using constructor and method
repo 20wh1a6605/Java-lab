@@ -17,7 +17,7 @@ public class Student_info {
 		age = a;
 	}
 	public void display() {
-		System.out.println("Student id "+sid +"Student name is "+sname+ " Age of the student" +age+" Student address "+address+"Course name taken by the student "+c_name+" Branch name "+b_name);
+		System.out.println("Student id "+sid +"\n"+" Student name is "+sname+"\n"+ " Age of the student" +age+"\n"+" Student address "+address+"\n"+" Course name taken by the student "+c_name+"\n"+" Branch name "+b_name);
 		System.out.println("\n");
 	}
 	public static void main(String[] args) {
