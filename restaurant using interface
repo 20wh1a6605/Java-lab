@@ -1,0 +1,42 @@
+package roll_6605;
+
+public interface Restaurant {
+	void display();
+	abstract double total_price(int a);
+	abstract void menu();
+}
+class Mcd implements Restaurant{
+	public void display() {
+		System.out.println("Mc Donalds");
+	}
+	public double total_price(int a) {
+		return a+(0.6*a);
+	}
+	public void menu() {
+		System.out.println("Veg burger" + "\n" + "Fries" +"\n"+"Shakes"+"\n"+"Pizza");
+	}
+}
+class KFC implements Restaurant{
+	public void display() {
+		System.out.println("KFC");
+	}
+	public double total_price(int a) {
+		return a+(0.6*a);
+	}
+	public void menu() {
+		System.out.println("Chicken wings" + "\n" + "Fries" +"\n"+"Shakes"+"\n"+"Chicken nuggets");
+	}
+}
+class Tf{
+	Mcd obj = new Mcd();
+	KFC obj1 = new KFC();
+	System.out.println("Mcdonalds list");
+	System.out.println(obj.display());
+	System.out.println("Menu is "+"\n" + obj.menu());
+	System.out.println("Total price is "+obj.total_price(300));
+	System.out.println("KFC list");
+	System.out.println(obj1.display());
+	System.out.println("Menu is "+"\n" + obj1.menu());
+	System.out.println("Total price is "+obj1.total_price(500));
+	
+}
