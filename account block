@@ -1,0 +1,48 @@
+package roll_6605;
+import java.util.Scanner;
+class pinmismatched extends Exception{
+	public String toString() {
+		return "Sorry your account has been blocked for 24 hours";
+	}
+}
+class pinandacc{
+	public int pin,acc;
+	public int count = 0,pin1;
+	pinandacc(int pin,int acc){
+		this.pin = pin;
+		this.acc = acc;
+	}
+	public void erro() throws pinmismatched{
+		while(count != 3) {
+			System.out.println("Enter pin");
+			Scanner s = new Scanner(System.in);
+			pin1 = s.nextInt();
+			if(pin1 == pin) {
+				break;
+			}
+			count += 1;
+		}
+		if(count == 3) {
+			throw new pinmismatched();
+		}
+		else {
+			System.out.println("Account opened");
+		}
+	}
+		
+}
+public class ATM {
+	public static void main(String[] args) {
+	int acc;
+	Scanner s = new Scanner(System.in);
+	System.out.println("give account number");
+	acc = s.nextInt();
+	pinandacc n = new pinandacc(1234,acc);
+	try {
+		n.erro();
+	}
+	catch(pinmismatched e) {
+		System.out.println(e);
+	}
+	}
+}
