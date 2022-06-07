@@ -1,0 +1,32 @@
+package roll_6605;
+class creditsnotenough extends Exception{
+	creditsnotenough(String s){
+		super(s);
+	}
+}
+
+public class credits {
+	public static void main(String[] args) {
+		Test c = new Test(49);
+		try {
+			c.except();
+		}
+		catch(creditsnotenough e) {
+			System.out.println(e);
+		}
+	}
+}
+class Test{
+	
+	int cred;
+	public Test(int cred) {
+		this.cred = cred;
+	}
+	public void except() throws creditsnotenough{
+		if(cred < 50) {
+			throw new creditsnotenough("Credits are not enough");
+		}
+	
+	}
+}
+
