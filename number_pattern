@@ -1,0 +1,33 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class HelloWorld {
+    public int n;
+    public void display(int n){
+        int i,j;
+        for(i = 0;i<n;i++){
+            if(i == 0){
+                System.out.print(1);
+            }
+            else{
+            for(j = i+1;j>0;j--){
+                System.out.print(j);
+            }
+            for(j = 2;j<=i+1;j++){
+                System.out.print(j);
+            }
+            }
+            System.out.println("\n");
+        }
+    }
+    public static void main(String[] args) {
+        HelloWorld n = new HelloWorld();
+        n.display(5);
+        
+    }
+}
+Output:
+1
+212
+32123
+4321234
+543212345
