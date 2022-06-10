@@ -1,0 +1,38 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.Scanner;
+class Pinmismatch extends Exception{
+    public String toString(){
+        return "acc blocked";
+    }
+}
+class Hello{
+    public void disp() throws Pinmismatch{
+    Scanner n = new Scanner(System.in);
+    int i;
+    for(i = 0;i<3;i++){
+        int a = n.nextInt();
+        if(a == 123){
+            System.out.println("hs");
+            break;
+        }
+    }
+    if(i == 3){
+        throw new Pinmismatch();
+    }
+}}
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+         
+        Hello n = new Hello();
+        try{
+            n.disp();
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    
+    }
+}
