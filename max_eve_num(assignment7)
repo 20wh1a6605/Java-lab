@@ -1,0 +1,38 @@
+public class MyClass {
+    public static void main(String args[]) {
+      String a = "%#32%#%2";
+      char[] ch = a.toCharArray();
+      StringBuffer num = new StringBuffer();
+      for(char i:ch){
+          if(Character.isDigit(i)){
+              num.append(i);
+          }
+      }
+      String nu = num.toString();
+      String min = "";
+      int mini = 11;
+      int[] freq = new int[11];
+      for(int i = 0;i<nu.length();i++){
+          int digit = nu.charAt(i) -'0';
+          if(freq[digit] == 0){
+          freq[digit]++;
+          if(digit%2 == 0){
+              mini = digit;
+          }
+          }
+      }
+      freq[mini]--;
+      int i = 11;
+      while(i >=0){
+          if(freq[i] > 0){
+              min = min+i;
+              freq[i]--;
+          }
+          else{
+              i--;
+          }
+      }
+      min = min+mini;
+      System.out.println(min);
+    }
+}
