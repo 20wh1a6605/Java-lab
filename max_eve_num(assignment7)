@@ -3,7 +3,7 @@
 
 class HelloWorld {
     public static void main(String args[]) {
-      String a = "#2441";
+      String a = "#1&5";
       char[] ch = a.toCharArray();
       StringBuffer num = new StringBuffer();
       for(char i:ch){
@@ -23,6 +23,10 @@ class HelloWorld {
               mini = digit;
           }
           }
+      }
+      if(mini == 11){
+          System.out.println("None");
+          System.exit(0);
       }
       freq[mini]--;
       int i = 10;
