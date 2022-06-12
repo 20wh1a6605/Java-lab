@@ -1,6 +1,9 @@
-public class MyClass {
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class HelloWorld {
     public static void main(String args[]) {
-      String a = "%#32%#%2";
+      String a = "#2441";
       char[] ch = a.toCharArray();
       StringBuffer num = new StringBuffer();
       for(char i:ch){
@@ -16,13 +19,13 @@ public class MyClass {
           int digit = nu.charAt(i) -'0';
           if(freq[digit] == 0){
           freq[digit]++;
-          if(digit%2 == 0){
+          if(digit%2 == 0 && digit < mini){
               mini = digit;
           }
           }
       }
       freq[mini]--;
-      int i = 11;
+      int i = 10;
       while(i >=0){
           if(freq[i] > 0){
               min = min+i;
