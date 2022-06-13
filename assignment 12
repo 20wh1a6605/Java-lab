@@ -1,0 +1,26 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+interface Restaurant{
+    void print();
+    abstract void totalPrice(int a);
+    abstract void menu();
+}
+class KFC implements Restaurant{
+    public void print(){
+        System.out.println("KFC");
+    }
+    public void totalPrice(int a){
+        System.out.println("Total price "+(a+(a*0.6)));
+    }
+    public void menu(){
+        System.out.println("CHicken" + "\n" + "Veg");
+    }
+}
+class HelloWorld {
+    public static void main(String[] args) {
+        KFC k = new KFC();
+        k.print();
+        k.totalPrice(232);
+        k.menu();
+    }
+}
