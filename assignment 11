@@ -9,7 +9,7 @@ abstract class Print implements Bill{
         System.out.println(amt);
     }
 }
-class Water extends Print implements Bill{
+class Water extends Print{
     public double calc(int Bill){
         return Bill*2;
     }
