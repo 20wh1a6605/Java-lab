@@ -1,0 +1,28 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class crednotenough extends Exception{
+    crednotenough(String s){
+        super(s);
+    }
+}
+class Test {
+    void cred(int c) throws crednotenough{
+        if(c >=50){
+            System.out.println("Enough");
+        }
+        else{
+            throw new crednotenough("Credits not enough");
+        }
+    }
+}
+class HelloWorld {
+    public static void main(String[] args) {
+        Test t = new Test();
+        try{
+            t.cred(45);
+        }
+        catch(crednotenough e){
+            System.out.println(e);
+        }
+    }
+}
