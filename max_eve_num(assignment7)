@@ -5,7 +5,7 @@ class HelloWorld {
     public static void main(String args[]) {
       String a = "#1&5";
       char[] ch = a.toCharArray();
-      StringBuffer num = new StringBuffer();
+      StringBuilder num = new StringBuilder();
       for(char i:ch){
           if(Character.isDigit(i)){
               num.append(i);
