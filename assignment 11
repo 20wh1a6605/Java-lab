@@ -1,0 +1,31 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+interface Bill{
+    double calc(int Bill);
+    void print(double amt);
+}
+abstract class Print implements Bill{
+    public void print(double amt){
+        System.out.println(amt);
+    }
+}
+class Water extends Print implements Bill{
+    public double calc(int Bill){
+        return Bill*2;
+    }
+}
+class Electric extends Print implements Bill{
+    public double calc(int Bill){
+        return Bill*3;
+    }
+}
+class HelloWorld {
+    public static void main(String[] args) {
+       Water n = new Water();
+       n.print(11);
+       System.out.println(n.calc(12));
+       Electric nw = new Electric();
+       nw.print(12);
+       System.out.println(nw.calc(12));
+    }
+}
