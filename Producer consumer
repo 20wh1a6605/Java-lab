@@ -1,0 +1,90 @@
+package roll_6605;
+class Itemqueue{
+	int item;
+	boolean value = false;
+	synchronized int getitem() {
+		while(!value) {
+			try {
+				
+				wait();
+				
+			}
+			catch(Exception e) {
+				System.out.println(e);
+			}
+		}
+		
+		value = false;
+		System.out.println("Consumed : "+item);
+		try {
+			Thread.sleep(1000);
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		notify();
+		return item;
+	}
+	synchronized void putitem(int item) {
+		
+		while(value) {
+		try {
+			wait();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}}
+		this.item = item;
+		value = true;
+		System.out.println("Produced : "+item);
+		try {
+			Thread.sleep(1000);
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		notify();
+		
+	}
+	
+}
+class Producer extends Thread{
+	Itemqueue iq;
+	Producer(Itemqueue iq){
+		this.iq = iq;
+		//new Thread(this).start();
+	}
+	public void run() {
+		int i = 1;
+		for(int j = 0;j<2;j++) {
+			iq.putitem(i);
+			i++;
+		}
+	}
+	
+}
+class Consumer extends Thread{
+	Itemqueue iq;
+	Consumer(Itemqueue iq){
+		this.iq = iq;
+		//new Thread(this).start();
+	}
+	public void run() {
+		for(int j = 0;j<2;j++) {
+			iq.getitem();
+		}
+	}
+	
+}
+public class ProducerConsumer {
+
+	public static void main(String[] args) {
+		Itemqueue iq = new Itemqueue();
+		
+		Producer p = new Producer(iq);
+		Consumer c = new Consumer(iq);
+		p.start();
+		c.start();
+	}
+
+}
