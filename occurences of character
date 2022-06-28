@@ -1,0 +1,36 @@
+package roll_6605;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Scanner;
+public class Hashmapdemo {
+	public int occurence(char[] s2,char i) {
+		HashSet<Character> s1 = new HashSet<Character>();
+		HashMap<Character,Integer> m1 = new HashMap<Character,Integer>();
+		for(char j:s2) {
+			s1.add(j);
+		}
+		for(char j:s2) {
+		
+				if(m1.containsKey(j) ){
+					m1.put(j, m1.get(j)+1);
+				}
+				else {
+					m1.put(j, 1);
+				}
+			
+		}
+		return m1.get(i);
+	}
+
+	public static void main(String[] args) {
+		Hashmapdemo hd = new Hashmapdemo();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Give the string");
+		String str = s.nextLine();
+		char[] s2 = str.toCharArray();
+		System.out.println("Give the character");
+		char a = s.next().charAt(0);
+		System.out.println("Occurences = " + hd.occurence(s2, a));
+	}
+
+}
