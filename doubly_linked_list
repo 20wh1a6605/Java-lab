@@ -1,0 +1,99 @@
+package roll_6605;
+import java.util.Scanner;
+public class Doublylinkedlist {
+	class Node{
+		int item;
+		Node previous;
+		Node next;
+	}
+	Node head,tail = null;
+	public void add_into(int item) {
+		Node n = new Node();
+		if(head == null) {
+			n.item = item;
+			head = n;
+			tail = n;
+			head.previous =null;
+			tail.next = null;
+		}
+		else {
+			n.item = item;
+			tail.next = n;
+			n.previous = tail;
+			tail = n;
+			tail.next = null;
+		}
+	}
+	public int remove(int ele) {
+		Node n= head;
+		Node temp = n.next;
+		if(head.item == ele) {
+			head = head.next;
+			head.previous = null;
+			return 0;
+		}
+		else if(tail.item == ele) {
+			tail = tail.previous;
+			tail.next = null;
+			return 0;
+		}
+		else {
+			while(n != null) {
+				if(n.item == ele) {
+					n.next.previous = n.previous;
+					n.previous.next = n.next;
+					return 0;
+				}
+				else {
+					n = n.next;
+				}
+			}
+			return -1;
+			}
+	}
+	public void display() {
+		Node cur = head;
+		while(cur != null) {
+			System.out.print(cur.item+" ");
+			cur = cur.next;
+		}
+	}
+	public static void main(String[] args) {
+		Doublylinkedlist l = new Doublylinkedlist();
+		l.add_into(1);
+		l.add_into(2);
+		l.add_into(3);
+		l.add_into(4);
+		l.add_into(5);
+		System.out.println("List before removal");
+		l.display();
+		Scanner s = new Scanner(System.in);
+		System.out.println("Give the element to remove");
+		int b = s.nextInt();
+		int a = l.remove(b);
+		if(a==-1) {
+			System.out.println("Element doesn't exist in list");
+		}
+		else {
+			System.out.println("List after removal");
+			l.display();
+		}
+	}
+}
+Output:
+List before removal
+1 2 3 4 5 Give the element to remove
+3
+List after removal
+1 2 4 5 
+
+List before removal
+1 2 3 4 5 Give the element to remove
+9
+Element doesn't exist in list
+
+List before removal
+1 2 3 4 5 Give the element to remove
+1
+List after removal
+2 3 4 5 
